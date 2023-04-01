@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Detail from './pages/Detail';
 import AddEditBlog from './pages/AddEditBlog';
 import About from './pages/About';
+import Profile from './pages/Profile';
 import NotFound from './pages/NotFound';
 import Header from './components/Header';
 import Auth from './pages/Auth';
@@ -86,6 +87,7 @@ function App() {
         <Route path="/tag/:tag" element={<TagBlog setActive={setActive} />} />
         <Route path="/category/:category" element={<CategoryBlog setActive={setActive}  />} />
         <Route path="/about" element={<About />} />
+        <Route path="/profile" element={<Profile setActive={setActive} active={active} user={user}/>} />
         <Route
           path="/auth"
           element={<Auth setActive={setActive} setUser={setUser} />}
