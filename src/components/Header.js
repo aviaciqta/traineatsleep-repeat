@@ -28,9 +28,8 @@ const Header = ({ active, setActive, user, handleLogout }) => {
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <Link to="/" style={{ textDecoration: 'none' }}>
                   <li
-                    className={`nav-item nav-link ${
-                      active === 'home' ? 'active' : ''
-                    }`}
+                    className={`nav-item nav-link ${active === 'home' ? 'active' : ''
+                      }`}
                     onClick={() => setActive('home')}
                   >
                     Home
@@ -38,9 +37,8 @@ const Header = ({ active, setActive, user, handleLogout }) => {
                 </Link>
                 <Link to="/blogs" style={{ textDecoration: 'none' }}>
                   <li
-                    className={`nav-item nav-link ${
-                      active === 'blogs' ? 'active' : ''
-                    }`}
+                    className={`nav-item nav-link ${active === 'blogs' ? 'active' : ''
+                      }`}
                     onClick={() => setActive('blogs')}
                   >
                     Blogs
@@ -49,9 +47,8 @@ const Header = ({ active, setActive, user, handleLogout }) => {
 
                 <Link to="/create" style={{ textDecoration: 'none' }}>
                   <li
-                    className={`nav-item nav-link ${
-                      active === 'create' ? 'active' : ''
-                    }`}
+                    className={`nav-item nav-link ${active === 'create' ? 'active' : ''
+                      }`}
                     onClick={() => setActive('create')}
                   >
                     Create
@@ -60,9 +57,8 @@ const Header = ({ active, setActive, user, handleLogout }) => {
 
                 <Link to="/about" style={{ textDecoration: 'none' }}>
                   <li
-                    className={`nav-item nav-link ${
-                      active === 'about' ? 'active' : ''
-                    }`}
+                    className={`nav-item nav-link ${active === 'about' ? 'active' : ''
+                      }`}
                     onClick={() => setActive('about')}
                   >
                     About
@@ -73,6 +69,8 @@ const Header = ({ active, setActive, user, handleLogout }) => {
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                   {userId ? (
                     <>
+
+
                       <div className="profile-logo">
                         <img
                           src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
@@ -85,19 +83,27 @@ const Header = ({ active, setActive, user, handleLogout }) => {
                           }}
                         />
                       </div>
-                      <p style={{ marginTop: '12px', marginLeft: '5px' }}>
-                        {user?.displayName}
-                      </p>
+                      <Link to="/profile" style={{ textDecoration: 'none'}}>
+                        <li 
+                          className={`nav-item nav-link ${active === 'profile' ? 'active' : ''
+                            }`}
+                          onClick={() => setActive('profile')}
+                        >
+                          <p className="nav-item nav-link" style={{ marginTop: '12px', marginLeft: '5px' }}>
+                            {user?.displayName}
+                          </p>
+                        </li>
+                      </Link>
                       <li className="nav-item nav-link" onClick={handleLogout}>
                         Logout
                       </li>
+
                     </>
                   ) : (
                     <Link to="/auth" style={{ textDecoration: 'none' }}>
                       <li
-                        className={`nav-item nav-link ${
-                          active === 'login' ? 'active' : ''
-                        }`}
+                        className={`nav-item nav-link ${active === 'login' ? 'active' : ''
+                          }`}
                         onClick={() => setActive('login')}
                       >
                         Login
@@ -115,3 +121,4 @@ const Header = ({ active, setActive, user, handleLogout }) => {
 };
 
 export default Header;
+
