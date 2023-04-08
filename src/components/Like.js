@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Tooltip } from 'bootstrap';
 
@@ -6,6 +7,7 @@ const Like = ({ handleLike, likes, userId }) => {
     let tooltipTriggerList = [].slice.call(
       document.querySelectorAll('[data-bs-toggle="tooltip"]')
     );
+    // eslint-disable-next-line
     let tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
       return new Tooltip(tooltipTriggerEl);
     });
