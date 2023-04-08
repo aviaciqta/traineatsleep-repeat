@@ -153,7 +153,7 @@ const Home = ({ setActive, user, active }) => {
   useEffect(() => {
     if (!isNull(searchQuery)) {
       searchBlogs();
-    }
+    }// eslint-disable-next-line
   }, [searchQuery]);
 
   if (loading) {
