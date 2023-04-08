@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// eslint-disable-next-line
 import transitions from 'bootstrap';
+
+
 
 const Header = ({ active, setActive, user, handleLogout }) => {
   const userId = user?.uid;
@@ -70,21 +73,37 @@ const Header = ({ active, setActive, user, handleLogout }) => {
                   {userId ? (
                     <>
 
+                      <Link to="/profileLogo">
+                        <li className={`nav-item nav-link ${active === 'profileLogo' ? 'active' : ''
+                            }`}
+                          onClick={() => setActive('profileLogo')}>
+                        <div className="profile-logo" >
+                            {user?.photoURL ? (<img
+                            src={user?.photoURL}
+                            alt="logo"
+                            style={{
+                              width: '30px',
+                              height: '30px',
+                              borderRadius: '50%',
+                              marginTop: '12px',
+                            }}
+                          />) : (<img
+                            src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
+                            alt="logo"
+                            style={{
+                              width: '30px',
+                              height: '30px',
+                              borderRadius: '50%',
+                              marginTop: '12px',
+                            }}
+                          />)}
+                          
+                        </div>
+                        </li>
+                      </Link>
 
-                      <div className="profile-logo">
-                        <img
-                          src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
-                          alt="logo"
-                          style={{
-                            width: '30px',
-                            height: '30px',
-                            borderRadius: '50%',
-                            marginTop: '12px',
-                          }}
-                        />
-                      </div>
-                      <Link to="/profile" style={{ textDecoration: 'none'}}>
-                        <li 
+                      <Link to="/profile" style={{ textDecoration: 'none' }}>
+                        <li
                           className={`nav-item nav-link ${active === 'profile' ? 'active' : ''
                             }`}
                           onClick={() => setActive('profile')}
@@ -121,4 +140,3 @@ const Header = ({ active, setActive, user, handleLogout }) => {
 };
 
 export default Header;
-
